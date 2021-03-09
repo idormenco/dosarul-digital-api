@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  stamacasa.api:
+    image: ${DOCKER_REGISTRY-}stamacasa-api
+    build:
+      context: .
+      dockerfile: StamAcasa.Api/Dockerfile
+    environment:
+      - ASPNETCORE_URLS=http://+:80
+      # add here dependencies 
+    ports:
+      - 5008:80
